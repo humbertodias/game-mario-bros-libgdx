@@ -57,9 +57,9 @@ After that, watch the **Brent Aureli** Youtube class
 	
 	[http://www.mapeditor.org](http://www.mapeditor.org)
 
-2. IntelliJ IDEA
+2. Android Studio
 
-	[https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)
+	[http://developer.android.com/intl/pt-br/sdk/index.html](http://developer.android.com/intl/pt-br/sdk/index.html)
 
 
 3. Sprites of **Super Mario Bros 1**
