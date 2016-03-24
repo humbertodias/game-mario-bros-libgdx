@@ -1,0 +1,31 @@
+# IntelliJ ignores
+
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.classpath
+.project
+
+# Log files
+.log
