@@ -51,7 +51,7 @@ After that, watch the **Brent Aureli** Youtube class
 
 [LibGDX - Super Mario Bros](https://www.youtube.com/watch?v=a8MPxzkwBwo&list=PLZm85UZQLd2SXQzsF-a0-pPF6IWDDdrXt)
 
-Needed **Tools**
+### Needed **Tools**
 
 1. Tiled Map Editor
 	
