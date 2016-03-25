@@ -70,5 +70,8 @@ After that, watch the **Brent Aureli** Youtube class
 
 [libGDX HOME](https://libgdx.badlogicgames.com/)
 
+[libGDX API](https://libgdx.badlogicgames.com/nightlies/docs/api)
+
 [libGDX with Maven](https://github.com/libgdx/libgdx/wiki/Maven-integration)
 
+[libGDX Project Setup](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle)
