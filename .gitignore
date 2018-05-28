@@ -4,6 +4,7 @@
 *.ipr
 *.iws
 */.idea/
+.idea
 
 # built application files
 *.apk
@@ -29,3 +30,8 @@ local.properties
 
 # Log files
 .log
+
+src/.gradle
+src/gradle
+
+
