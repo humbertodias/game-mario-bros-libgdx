@@ -22,7 +22,7 @@ import com.polygongames.mario.screens.PlayScreen;
  */
 public class Fireball extends RigidBody {
 
-    private Animation firing;
+    private Animation<TextureRegion> firing;
     private TextureRegion hitting;
 
     private boolean movingRight;
@@ -46,7 +46,7 @@ public class Fireball extends RigidBody {
         keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireBall"), 8, 0, 8, 8));
         keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireBall"), 0, 8, 8, 8));
         keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireBall"), 8, 8, 8, 8));
-        firing = new Animation(0.1f, keyFrames);
+        firing = new Animation<TextureRegion>(0.1f, keyFrames);
 
         // hitting
         hitting = new TextureRegion(textureAtlas.findRegion("FireBall"), 20, 4, 8, 8);

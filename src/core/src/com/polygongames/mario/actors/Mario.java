@@ -51,43 +51,43 @@ public class Mario extends RigidBody {
 
     private TextureRegion standingSmall;
     private TextureRegion jumpingSmall;
-    private Animation runningSmall;
+    private Animation<TextureRegion> runningSmall;
     private TextureRegion brakingSmall;
-    private Animation climbingSmall;
+    private Animation<TextureRegion> climbingSmall;
 
     private TextureRegion standingBig;
     private TextureRegion jumpingBig;
-    private Animation runningBig;
+    private Animation<TextureRegion> runningBig;
     private TextureRegion brakingBig;
     private TextureRegion crouchingBig;
-    private Animation climbingBig;
+    private Animation<TextureRegion> climbingBig;
 
     private TextureRegion standingFireMario;
     private TextureRegion jumpingFireMario;
-    private Animation runningFireMario;
+    private Animation<TextureRegion> runningFireMario;
     private TextureRegion brakingFireMario;
     private TextureRegion crouchingFireMario;
-    private Animation climbingFireMario;
+    private Animation<TextureRegion> climbingFireMario;
 
     private TextureRegion[] standingSmallInvincible;
     private TextureRegion[] jumpingSmallInvincible;
-    private Animation[] runningSmallInvincible;
+    private Animation<TextureRegion>[] runningSmallInvincible;
     private TextureRegion[] brakingSmallInvincible;
-    private Animation[] climbingSmallInvincible;
+    private Animation<TextureRegion>[] climbingSmallInvincible;
 
     private TextureRegion[] standingBigInvincible;
     private TextureRegion[] jumpingBigInvincible;
-    private Animation[] runningBigInvincible;
+    private Animation<TextureRegion>[] runningBigInvincible;
     private TextureRegion[] brakingBigInvincible;
     private TextureRegion[] crouchingBigInvincible;
-    private Animation[] firingBigInvincible;
-    private Animation[] climbingBigInvincible;
+    private Animation<TextureRegion>[] firingBigInvincible;
+    private Animation<TextureRegion>[] climbingBigInvincible;
 
     private TextureRegion dying;
-    private Animation growing;
-    private Animation fireMarioing;
-    private Animation shrinking;
-    private Animation firingAnimation;
+    private Animation<TextureRegion> growing;
+    private Animation<TextureRegion> fireMarioing;
+    private Animation<TextureRegion> shrinking;
+    private Animation<TextureRegion> firingAnimation;
 
     private boolean showFiringAnimation;
 
@@ -146,19 +146,19 @@ public class Mario extends RigidBody {
         for (int i = 1; i < 4; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_small"), 16 * i, 0, 16, 16));
         }
-        runningSmall = new Animation(0.1f, keyFrames);
+        runningSmall = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
         for (int i = 1; i < 4; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big"), 16 * i, 0, 16, 32));
         }
-        runningBig = new Animation(0.1f, keyFrames);
+        runningBig = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
         for (int i = 1; i < 4; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireMario"), 16 * i, 0, 16, 32));
         }
-        runningFireMario = new Animation(0.1f, keyFrames);
+        runningFireMario = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
 
@@ -166,19 +166,19 @@ public class Mario extends RigidBody {
         for (int i = 7; i < 9; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_small"), 16 * i, 0, 16, 16));
         }
-        climbingSmall = new Animation(0.1f, keyFrames);
+        climbingSmall = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
         for (int i = 7; i < 9; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big"), 16 * i, 0, 16, 32));
         }
-        climbingBig = new Animation(0.1f, keyFrames);
+        climbingBig = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
         for (int i = 7; i < 9; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireMario"), 16 * i, 0, 16, 32));
         }
-        climbingFireMario = new Animation(0.1f, keyFrames);
+        climbingFireMario = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
 
@@ -187,7 +187,7 @@ public class Mario extends RigidBody {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big"), 16 * 15, 0, 16, 32));
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big"), 0, 0, 16, 32));
         }
-        growing = new Animation(0.1f, keyFrames);
+        growing = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
         // becoming FireMario animation
@@ -195,14 +195,14 @@ public class Mario extends RigidBody {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireMario"), 16 * 15, 0, 16, 32));
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireMario"), 0, 0, 16, 32));
         }
-        fireMarioing = new Animation(0.1f, keyFrames);
+        fireMarioing = new Animation<TextureRegion>(0.1f, keyFrames);
 
         // firing animation
         keyFrames.clear();
         for (int i = 16; i < 19; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("FireMario"), 16 * i, 0, 16, 32));
         }
-        firingAnimation = new Animation(0.1f, keyFrames);
+        firingAnimation = new Animation<TextureRegion>(0.1f, keyFrames);
 
         keyFrames.clear();
         // shrinking animation
@@ -210,7 +210,7 @@ public class Mario extends RigidBody {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big"), 0, 0, 16, 32));
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big"), 16 * 15, 0, 16, 32));
         }
-        shrinking = new Animation(0.1f, keyFrames);
+        shrinking = new Animation<TextureRegion>(0.1f, keyFrames);
 
         dying = new TextureRegion(textureAtlas.findRegion("Mario_small"), 16 * 6, 0, 16, 16);
 
@@ -240,24 +240,28 @@ public class Mario extends RigidBody {
         brakingSmallInvincible[2].flip(true, false);
         brakingSmallInvincible[3].flip(true, false);
 
-        runningSmallInvincible = new Animation[4];
+        @SuppressWarnings("unchecked")
+        Animation<TextureRegion>[] tempRunningSmallInvincible = (Animation<TextureRegion>[]) new Animation[4];
+        runningSmallInvincible = tempRunningSmallInvincible;
         runningSmallInvincible[0] = runningSmall;
         for (int j = 1; j < 4; j++) {
             keyFrames.clear();
             for (int i = 1; i < 4; i++) {
                 keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_small_invincible" + j), 16 * i, 0, 16, 16));
             }
-            runningSmallInvincible[j] = new Animation(0.1f, keyFrames);
+            runningSmallInvincible[j] = new Animation<TextureRegion>(0.1f, keyFrames);
         }
 
-        climbingSmallInvincible = new Animation[4];
+        @SuppressWarnings("unchecked")
+        Animation<TextureRegion>[] tempClimbingSmallInvincible = (Animation<TextureRegion>[]) new Animation[4];
+        climbingSmallInvincible = tempClimbingSmallInvincible;
         climbingSmallInvincible[0] = climbingSmall;
         for (int j = 1; j < 4; j++) {
             keyFrames.clear();
             for (int i = 7; i < 9; i++) {
                 keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_small_invincible" + j), 16 * i, 0, 16, 16));
             }
-            climbingSmallInvincible[j] = new Animation(0.1f, keyFrames);
+            climbingSmallInvincible[j] = new Animation<TextureRegion>(0.1f, keyFrames);
         }
 
         standingBigInvincible = new TextureRegion[4];
@@ -287,34 +291,40 @@ public class Mario extends RigidBody {
         crouchingBigInvincible[2] = new TextureRegion(textureAtlas.findRegion("Mario_big_invincible2"), 16 * 6, 0, 16, 32);
         crouchingBigInvincible[3] = new TextureRegion(textureAtlas.findRegion("Mario_big_invincible3"), 16 * 6, 0, 16, 32);
 
-        runningBigInvincible = new Animation[4];
+        @SuppressWarnings("unchecked")
+        Animation<TextureRegion>[] tempRunningBigInvincible = (Animation<TextureRegion>[]) new Animation[4];
+        runningBigInvincible = tempRunningBigInvincible;
         runningBigInvincible[0] = runningBig;
         for (int j = 1; j < 4; j++) {
             keyFrames.clear();
             for (int i = 1; i < 4; i++) {
                 keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big_invincible" + j), 16 * i, 0, 16, 32));
             }
-            runningBigInvincible[j] = new Animation(0.1f, keyFrames);
+            runningBigInvincible[j] = new Animation<TextureRegion>(0.1f, keyFrames);
         }
 
-        firingBigInvincible = new Animation[4];
+        @SuppressWarnings("unchecked")
+        Animation<TextureRegion>[] tempFiringBigInvincible = (Animation<TextureRegion>[]) new Animation[4];
+        firingBigInvincible = tempFiringBigInvincible;
         firingBigInvincible[0] = firingAnimation;
         for (int j = 1; j < 4; j++) {
             keyFrames.clear();
             for (int i = 16; i < 19; i++) {
                 keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big_invincible" + j), 16 * i, 0, 16, 32));
             }
-            firingBigInvincible[j] = new Animation(0.1f, keyFrames);
+            firingBigInvincible[j] = new Animation<TextureRegion>(0.1f, keyFrames);
         }
 
-        climbingBigInvincible = new Animation[4];
+        @SuppressWarnings("unchecked")
+        Animation<TextureRegion>[] tempClimbingBigInvincible = (Animation<TextureRegion>[]) new Animation[4];
+        climbingBigInvincible = tempClimbingBigInvincible;
         climbingBigInvincible[0] = climbingBig;
         for (int j = 1; j < 4; j++) {
             keyFrames.clear();
             for (int i = 7; i < 9; i++) {
                 keyFrames.add(new TextureRegion(textureAtlas.findRegion("Mario_big_invincible" + j), 16 * i, 0, 16, 32));
             }
-            climbingBigInvincible[j] = new Animation(0.1f, keyFrames);
+            climbingBigInvincible[j] = new Animation<TextureRegion>(0.1f, keyFrames);
         }
 
 

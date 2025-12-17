@@ -17,7 +17,7 @@ import com.polygongames.mario.screens.PlayScreen;
  */
 public class Star extends Item {
 
-    private Animation animation;
+    private Animation<TextureRegion> animation;
     private float stateTime;
 
     private boolean movingRight;
@@ -30,7 +30,7 @@ public class Star extends Item {
         for (int i = 0; i < 4; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Star"), 16 * i, 0, 16, 16));
         }
-        animation = new Animation(0.1f, keyFrames);
+        animation = new Animation<TextureRegion>(0.1f, keyFrames);
 
         stateTime = 0;
 

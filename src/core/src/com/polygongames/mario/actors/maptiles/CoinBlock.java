@@ -33,7 +33,7 @@ public class CoinBlock extends MapTileObject {
     private Vector2 targetPosition;
 
     private TextureRegion unhitableTextureRegion;
-    private Animation flashingAnimation;
+    private Animation<TextureRegion> flashingAnimation;
 
     private float stateTimer;
 
@@ -49,7 +49,7 @@ public class CoinBlock extends MapTileObject {
             keyFrames.add(tiledMap.getTileSets().getTileSet(0).getTile(i).getTextureRegion());
         }
         keyFrames.add(tiledMap.getTileSets().getTileSet(0).getTile(26).getTextureRegion());
-        flashingAnimation = new Animation(0.2f, keyFrames);
+        flashingAnimation = new Animation<TextureRegion>(0.2f, keyFrames);
 
         originalPosition = new Vector2(x, y);
         movablePosition = new Vector2(x, y + 0.2f);

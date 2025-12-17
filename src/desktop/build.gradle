@@ -7,7 +7,7 @@ project.ext.mainClassName = "com.polygongames.mario.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../core/assets");
 
 task run(dependsOn: classes, type: JavaExec) {
-    main = project.mainClassName
+    mainClass = project.mainClassName
     classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in
     workingDir = project.assetsDir
@@ -15,9 +15,9 @@ task run(dependsOn: classes, type: JavaExec) {
 }
 
 task dist(type: Jar) {
-    from files(sourceSets.main.output.classesDir)
+    from files(sourceSets.main.output.classesDirs)
     from files(sourceSets.main.output.resourcesDir)
-    from {configurations.compile.collect {zipTree(it)}}
+    from {configurations.runtimeClasspath.collect {zipTree(it)}}
     from files(project.assetsDir);
  
     manifest {

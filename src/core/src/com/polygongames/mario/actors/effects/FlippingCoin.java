@@ -17,7 +17,7 @@ import com.polygongames.mario.screens.PlayScreen;
  */
 public class FlippingCoin extends Effect {
 
-    private Animation flipping;
+    private Animation<TextureRegion> flipping;
     private float stateTime;
 
     public FlippingCoin(PlayScreen playScreen, float x, float y) {
@@ -27,7 +27,7 @@ public class FlippingCoin extends Effect {
         for (int i = 0; i < 4; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("FlippingCoin"), 16 * i, 0, 16, 16));
         }
-        flipping = new Animation(0.05f, keyFrames);
+        flipping = new Animation<TextureRegion>(0.05f, keyFrames);
 
         stateTime = 0;
 

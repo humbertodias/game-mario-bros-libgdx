@@ -1,35 +1,55 @@
 apply plugin: "java"
-apply plugin: "jetty"
+apply plugin: "war"
+apply plugin: "org.gretty"
 
 gwt {
-    gwtVersion='2.6.0' // Should match the gwt version used for building the gwt backend
+    gwtVersion='2.8.2' // Should match the gwt version used for building the gwt backend
     maxHeapSize="1G" // Default 256m is not enough for gwt compiler. GWT is HUNGRY
     minHeapSize="1G"
 
     src = files(file("src/")) // Needs to be in front of "modules" below.
     modules 'com.ychstudio.GdxDefinition'
     devModules 'com.ychstudio.GdxDefinitionSuperdev'
-    project.webAppDirName = 'webapp'
+    webAppDirName = 'webapp'
 
     compiler {
         strict = true;
-        enableClosureCompiler = true;
         disableCastChecking = true;
     }
 }
 
-task draftRun(type: JettyRunWar) {
+task draftRun(type: JavaExec) {
     dependsOn draftWar
-    dependsOn.remove('war')
-    webApp=draftWar.archivePath
-    daemon=true
+    main = "com.google.gwt.dev.codeserver.CodeServer"
+    classpath {
+        [
+                sourceSets.main.java.srcDirs,
+                sourceSets.main.output.resourcesDir,
+                sourceSets.main.output.classesDirs,
+                sourceSets.main.compileClasspath,
+        ]
+    }
+    args = [
+            "-src", file("src/").absolutePath,
+            "com.ychstudio.GdxDefinitionSuperdev"
+    ]
 }
 
-task superDev(type: de.richsource.gradle.plugins.gwt.GwtSuperDev) {
+task superDev(type: JavaExec) {
     dependsOn draftRun
-    doFirst {
-    	gwt.modules = gwt.devModules
+    main = "com.google.gwt.dev.codeserver.CodeServer"
+    classpath {
+        [
+                sourceSets.main.java.srcDirs,
+                sourceSets.main.output.resourcesDir,
+                sourceSets.main.output.classesDirs,
+                sourceSets.main.compileClasspath,
+        ]
     }
+    args = [
+            "-src", file("src/").absolutePath,
+            "com.ychstudio.GdxDefinitionSuperdev"
+    ]
 }
 
 task dist(dependsOn: [clean, compileGwt]) {
@@ -54,14 +74,16 @@ draftWar {
    from "war"
 }
 
-task addSource << {
-	sourceSets.main.compileClasspath += files(project(':core').sourceSets.main.allJava.srcDirs)
+task addSource {
+	doLast {
+		sourceSets.main.compileClasspath += files(project(':core').sourceSets.main.allJava.srcDirs)
+	}
 }
 
 tasks.compileGwt.dependsOn(addSource)
 tasks.draftCompileGwt.dependsOn(addSource)
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.8
 sourceSets.main.java.srcDirs = [ "src/" ]
 
 
