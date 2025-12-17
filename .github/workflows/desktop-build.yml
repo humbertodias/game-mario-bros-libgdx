@@ -27,7 +27,7 @@ jobs:
         distribution: 'temurin'
         
     - name: Cache Gradle packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.gradle/caches
@@ -43,7 +43,7 @@ jobs:
       run: cd src && ./gradlew desktop:dist
       
     - name: Upload desktop JAR artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: desktop-jar
         path: src/desktop/build/libs/desktop-*.jar
@@ -58,27 +58,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
-    - name: Set up JDK 8
-      uses: actions/setup-java@v4
+    - name: Download desktop JAR artifact
+      uses: actions/download-artifact@v4
       with:
-        java-version: '8'
-        distribution: 'temurin'
-        
-    - name: Cache Gradle packages
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
-          
-    - name: Make gradlew executable
-      run: chmod +x src/gradlew
-      
-    - name: Build desktop distribution
-      run: cd src && ./gradlew desktop:dist
+        name: desktop-jar
+        path: artifacts
       
     - name: Get version from tag
       id: get_version
@@ -91,6 +75,6 @@ jobs:
         draft: false
         prerelease: false
         files: |
-          src/desktop/build/libs/desktop-*.jar
+          artifacts/desktop-*.jar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
