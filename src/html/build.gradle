@@ -3,13 +3,13 @@ apply plugin: "war"
 apply plugin: "org.gretty"
 
 gwt {
-    gwtVersion='2.8.2' // Should match the gwt version used for building the gwt backend
+    gwtVersion='2.10.0' // Should match the gwt version used for building the gwt backend
     maxHeapSize="1G" // Default 256m is not enough for gwt compiler. GWT is HUNGRY
     minHeapSize="1G"
 
     src = files(file("src/")) // Needs to be in front of "modules" below.
-    modules 'com.ychstudio.GdxDefinition'
-    devModules 'com.ychstudio.GdxDefinitionSuperdev'
+    modules 'com.polygongames.mario.GdxDefinition'
+    devModules 'com.polygongames.mario.GdxDefinitionSuperdev'
     webAppDirName = 'webapp'
 
     compiler {
@@ -31,7 +31,7 @@ task draftRun(type: JavaExec) {
     }
     args = [
             "-src", file("src/").absolutePath,
-            "com.ychstudio.GdxDefinitionSuperdev"
+            "com.polygongames.mario.GdxDefinitionSuperdev"
     ]
 }
 
@@ -48,7 +48,7 @@ task superDev(type: JavaExec) {
     }
     args = [
             "-src", file("src/").absolutePath,
-            "com.ychstudio.GdxDefinitionSuperdev"
+            "com.polygongames.mario.GdxDefinitionSuperdev"
     ]
 }
 
