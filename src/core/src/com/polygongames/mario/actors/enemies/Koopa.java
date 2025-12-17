@@ -26,9 +26,9 @@ public class Koopa extends Enemy {
         DYING,
     }
 
-    private Animation walking;
+    private Animation<TextureRegion> walking;
     private TextureRegion shelling;
-    private Animation awaking;
+    private Animation<TextureRegion> awaking;
 
     private boolean shell;
     private boolean die;
@@ -54,7 +54,7 @@ public class Koopa extends Enemy {
         for (int i = 0; i < 2; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Koopa"), i * 16, 0, 16, 32));
         }
-        walking = new Animation(0.2f, keyFrames);
+        walking = new Animation<TextureRegion>(0.2f, keyFrames);
 
         keyFrames.clear();
 
@@ -63,7 +63,7 @@ public class Koopa extends Enemy {
         for (int i = 4; i < 6; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Koopa"), i * 16, 0, 16, 32));
         }
-        awaking = new Animation(0.2f, keyFrames);
+        awaking = new Animation<TextureRegion>(0.2f, keyFrames);
 
         setSize(16 / GameManager.PPM, 32 / GameManager.PPM);
         setRegion(walking.getKeyFrame(0.1f, true));

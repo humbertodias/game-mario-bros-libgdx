@@ -16,7 +16,7 @@ import com.polygongames.mario.screens.PlayScreen;
  */
 public class Flower extends Item {
     
-    private Animation anim;
+    private Animation<TextureRegion> anim;
     private float stateTime;
     
     public Flower(PlayScreen playScreen, float x, float y) {
@@ -29,7 +29,7 @@ public class Flower extends Item {
             keyFrames.add(new TextureRegion(playScreen.getTextureAtlas().findRegion("Flower"), 16 * i, 0, 16, 16));
         }
 
-        anim = new Animation(0.2f, keyFrames);
+        anim = new Animation<TextureRegion>(0.2f, keyFrames);
         setRegion(anim.getKeyFrame(0, true));
         setBounds(getX(), getY(), 16 / GameManager.PPM, 16 / GameManager.PPM);
         stateTime = 0;

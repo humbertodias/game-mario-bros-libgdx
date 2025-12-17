@@ -25,7 +25,7 @@ public class Goomba extends Enemy {
         DYING,
     }
 
-    private Animation walking;
+    private Animation<TextureRegion> walking;
     private float stateTime;
 
     private boolean movingRight;
@@ -45,7 +45,7 @@ public class Goomba extends Enemy {
         for (int i = 0; i < 2; i++) {
             keyFrames.add(new TextureRegion(textureAtlas.findRegion("Goomba"), 16 * i, 0, 16, 16));
         }
-        walking = new Animation(0.2f, keyFrames);
+        walking = new Animation<TextureRegion>(0.2f, keyFrames);
 
         setRegion(keyFrames.get(0));
         setBounds(getX() - 8.0f / GameManager.PPM, getY() - 8.0f / GameManager.PPM, 16.0f / GameManager.PPM, 16.0f / GameManager.PPM);

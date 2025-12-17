@@ -23,7 +23,7 @@ public class Hud implements Disposable {
 
     class CoinHUD extends Actor {
 
-        private Animation anim;
+        private Animation<TextureRegion> anim;
         private float stateTime;
 
         public CoinHUD(TextureAtlas textureAtlas) {
@@ -32,7 +32,7 @@ public class Hud implements Disposable {
             for (int i = 0; i < 3; i++) {
                 keyFrames.add(new TextureRegion(textureAtlas.findRegion("CoinHUD"), i * 8, 0, 8, 8));
             }
-            anim = new Animation(0.3f, keyFrames);
+            anim = new Animation<TextureRegion>(0.3f, keyFrames);
 
             setSize(16, 16);
             stateTime = 0;
