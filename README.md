@@ -2,12 +2,17 @@
 
 Platform game like Super Mario Bros 1 using libGDX Library
 
+## 🎮 Play Online
+
+**[Play the Web Version Here](https://humbertodias.github.io/game-mario-bros-libgdx/)**
+
+The game is automatically built and deployed to GitHub Pages on every commit to the main branch.
 
 ## Prerequires
 
 1. Git 2.6+
 2. Gradle 2.11+
-3. Java 8+
+3. Java 11+ (Java 11 recommended for building the web version)
 
 
 ## How to Play
@@ -29,6 +34,17 @@ Run
 ```
 gradle desktop:run
 ```
+
+## Building the Web Version
+
+To build the HTML/web version locally:
+
+```bash
+cd src
+./gradlew html:dist
+```
+
+The built files will be in `src/html/build/dist/`. You can serve them with any web server.
 
 ## Output
 ![Preview](doc/gameplay.gif)

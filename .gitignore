@@ -35,4 +35,6 @@ local.properties
 src/.gradle
 src/gradle
 
-
+# GWT/HTML build artifacts
+src/html/war/
+src/html/gwt-unitCache/
