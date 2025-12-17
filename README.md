@@ -12,6 +12,16 @@ Platform game like Super Mario Bros 1 using libGDX Library
 
 ## How to Play
 
+### Download Pre-built Release
+
+Download the latest desktop JAR from the [Releases](https://github.com/humbertodias/game-mario-bros-libgdx/releases) page and run:
+
+```
+java -jar desktop-1.0.jar
+```
+
+### Build and Run from Source
+
 Clone
 
 ```
@@ -30,8 +40,30 @@ Run
 gradle desktop:run
 ```
 
+Build desktop distribution:
+
+```
+gradle desktop:dist
+```
+
+The built JAR will be located at `desktop/build/libs/desktop-1.0.jar`
+
 ## Output
 ![Preview](doc/gameplay.gif)
+
+## CI/CD
+
+This project uses GitHub Actions to automatically build the desktop version:
+
+- **Continuous Integration**: On every push to `main`/`master` or pull request, the desktop JAR is built and uploaded as an artifact (available for 30 days).
+- **Releases**: When a new tag is pushed (e.g., `v1.0.0`), a GitHub release is automatically created with the desktop JAR attached.
+
+To create a new release:
+
+```bash
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git push origin v1.0.0
+```
 
 ## Control
 ![Diretional](doc/wasd.png)
