@@ -7,10 +7,7 @@
 
 A platform game inspired by **Super Mario Bros (NES)**, built using the **libGDX** framework.
 
-
-## 🎮 Play Online
-
-👉 **[Play the Web Version](https://humbertodias.github.io/mario-bros-libgdx/)**
+**[Play the Web Version](https://humbertodias.github.io/mario-bros-libgdx/)**
 
 The web version is automatically built and deployed to **GitHub Pages** on every commit to the `main` branch.
 
