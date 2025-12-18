@@ -1,5 +1,7 @@
 [![Desktop](https://github.com/humbertodias/mario-bros-libgdx/actions/workflows/desktop-build.yml/badge.svg)](https://github.com/humbertodias/mario-bros-libgdx/actions/workflows/desktop-build.yml)
 [![Web](https://github.com/humbertodias/mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/humbertodias/mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/humbertodias/mario-bros-libgdx)
+![GitHub all releases](https://img.shields.io/github/downloads/humbertodias/mario-bros-libgdx/total)
 
 # Mario Bros (libGDX)
 
