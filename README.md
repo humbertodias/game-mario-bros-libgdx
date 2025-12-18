@@ -1,5 +1,5 @@
-[![CD/Desktop](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/desktop-build.yml/badge.svg)](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/desktop-build.yml)
-[![CD/Web](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml)
+[![Desktop](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/desktop-build.yml/badge.svg)](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/desktop-build.yml)
+[![Web](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml)
 
 # Mario Bros with libGDX
 
@@ -91,7 +91,7 @@ git push origin v1.0.0
 ## How it was made
 First I had to download the **App Setup**
 
-[https://libgdx.badlogicgames.com/download.html](https://libgdx.badlogicgames.com/download.html)
+[https://libgdx.com/wiki/start/project-generation](https://libgdx.com/wiki/start/project-generation)
 
 Then generate the project
 
