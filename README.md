@@ -15,8 +15,7 @@ The game is automatically built and deployed to GitHub Pages on every commit to 
 
 1. Git 2.6+
 2. Gradle 2.11+
-3. Java 11+ (Java 11 recommended for building the web version)
-
+3. Java 11+
 
 ## How to Play
 
