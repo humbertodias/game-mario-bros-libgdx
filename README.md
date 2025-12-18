@@ -1,3 +1,6 @@
+[![CD/Desktop](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/desktop-build.yml/badge.svg)](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/desktop-build.yml)
+[![CD/Web](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/humbertodias/game-mario-bros-libgdx/actions/workflows/deploy-gh-pages.yml)
+
 # Mario Bros with libGDX
 
 Platform game like Super Mario Bros 1 using libGDX Library
