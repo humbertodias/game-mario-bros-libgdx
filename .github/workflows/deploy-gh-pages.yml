@@ -1,4 +1,4 @@
-name: Deploy Web Version to GitHub Pages
+name: CD/Web
 
 on:
   push:
