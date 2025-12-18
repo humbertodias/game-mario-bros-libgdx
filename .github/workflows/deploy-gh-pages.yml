@@ -1,4 +1,4 @@
-name: CD/Web
+name: Web
 
 on:
   push:
