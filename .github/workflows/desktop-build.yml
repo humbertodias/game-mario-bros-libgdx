@@ -20,10 +20,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v6
       
-    - name: Set up JDK 8
+    - name: Set up JDK
       uses: actions/setup-java@v5
       with:
-        java-version: '8'
+        java-version: '11'
         distribution: 'temurin'
         
     - name: Cache Gradle packages
